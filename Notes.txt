@@ -1,0 +1,28 @@
+
+    NestJS Notes:
+    -------------
+
+    Defintion:
+        Very similar to Angular
+        Includes RxJS (uses Observables)
+
+    Setup:
+        Install nest globally: "npm i -g @nestjs/cli"
+        Create scaffolding for new app: "nest new nest-todo-app"
+        cd into app directory
+        Iniialize with: "npm run start"
+        Navigate to: "localhost:3000" to see "Hello World!"
+
+    CLI:
+        Generate modules with: "nest g module <module_name>"
+        Generate controller with: "nest g controller <controllers_name>"
+        Generate service with: "nest g service <service_name>"
+
+    Controllers:
+        Should hold All of the routes (Find under the "@GET" section inside 
+            the "@Controller" section)
+
+    Services:
+        Contain a "@Injectable()" decorator that indicates that it is built 
+            to be injected into other modules and controllers
+        
