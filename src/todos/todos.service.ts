@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Param } from '@nestjs/common';
 
 @Injectable()
 export class TodosService {
@@ -15,7 +15,7 @@ export class TodosService {
     },
     {
       id: '2',
-      title: 'Waash a car',
+      title: 'Wash a car',
       completed: true,
     },
   ];
@@ -23,5 +23,14 @@ export class TodosService {
   // Getting Todos
   getTodos(): any[] {
     return [...this.todos];
+  }
+
+  //   Getting Todo
+  //   Route handler parameter decorator. Extracts the
+  //   params property from the req object and populates
+  //   the decorated parameter with the value of params.
+  //   May also apply pipes to the bound parameter.
+  getTodo(todoId: string): any {
+    return this.todos.find((todo: any) => todo.id === todoId);
   }
 }

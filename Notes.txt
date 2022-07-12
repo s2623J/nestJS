@@ -10,7 +10,7 @@
         Install nest globally: "npm i -g @nestjs/cli"
         Create scaffolding for new app: "nest new nest-todo-app"
         cd into app directory
-        Iniialize with: "npm run start"
+        Iniialize with: "npm run start:dev" (will auto-refresh on save)
         Navigate to: "localhost:3000" to see "Hello World!"
 
     CLI:
