@@ -20,6 +20,16 @@ export class TodosService {
     },
   ];
 
+  createTodo(todo: any): any[] {
+    const result = {
+      id: new Date().getTime().toString(),
+      title: todo.title,
+      completed: todo.completed,
+    };
+    this.todos = [...this.todos, result];
+    return this.todos;
+  }
+
   // Getting Todos
   getTodos(): any[] {
     return [...this.todos];
@@ -32,5 +42,11 @@ export class TodosService {
   //   May also apply pipes to the bound parameter.
   getTodo(todoId: string): any {
     return this.todos.find((todo: any) => todo.id === todoId);
+  }
+
+  deleteTodo(todoId: string): any[] {
+    const todoIndex = this.todos.findIndex((todo: any) => todo.id === todoId);
+    if (todoIndex !== -1) this.todos.splice(todoIndex, 1);
+    return [...this.todos];
   }
 }
